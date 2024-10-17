@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()">
+                <div class="mb-3">
+                  <label for="labelNombre" class="form-label">Ingrese un Nombre</label>
+                  <input type="text" class="form-control" id="Nombre" formControlName="nombre" aria-describedby="nombreHelp">
+                  <div id="nombreHelp" class="form-text">Ingrese un nombre sin simbolos.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="labelApellido" class="form-label">Ingrese un Apellido</label>
+                    <input type="text" class="form-control" id="Apellido" formControlName="apellido" aria-describedby="apellidoHelp">
+                    <div id="apellidoHelp" class="form-text">Ingrese un apellido sin simbolos.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="labelEdad" class="form-label">Ingrese una Edad</label>
+                    <input type="text" class="form-control" id="Edad" formControlName="edad" aria-describedby="edadHelp">
+                    <div id="edadHelp" class="form-text">Ingrese su edad en numeros.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="correoApellido" class="form-label">Ingrese un Correo</label>
+                    <input type="text" class="form-control" id="Correo" formControlName="correo" aria-describedby="correoHelp">
+                    <div id="correoHelp" class="form-text">Ingrese una direccion de correo valida.</div>
+                  </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+        </div>
+    </div>
+    <div class="row">
+        <p *ngIf="datos_formulario != null">Hola <b> {{datos_formulario.nombre}} {{datos_formulario.apellido}} </b> Bienvenido al sistema en Angular</p>
+    </div>
+</div>
